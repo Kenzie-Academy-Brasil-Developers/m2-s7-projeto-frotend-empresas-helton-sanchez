@@ -1,0 +1,23 @@
+body {
+    margin: 0 auto;
+}
+
+
+
+form>select {
+    width: 85%;
+    height: 52px;
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-left: 2rem;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+form>select>option {
+    color: var(--grey2);
+}

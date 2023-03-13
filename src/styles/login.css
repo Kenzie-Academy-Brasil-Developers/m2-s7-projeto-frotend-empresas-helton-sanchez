@@ -1,0 +1,22 @@
+header>.navLogin {
+    gap: 1rem;
+    display: flex;
+}
+
+
+form>p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--grey2);
+    margin-left: 2rem;
+}
+
+form>.ou {
+    margin: 0 auto;
+}
+
+
+

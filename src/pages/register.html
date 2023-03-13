@@ -19,11 +19,33 @@
             <img src="../assets/img/ellipse.png" alt="Circulo roxo">
             <img src="../assets/img/logo.png" alt="Logo Kenzie Empresas">
         </div>
-        <div>
-            <button class="home" type="submit">Home</button>
-            <button class="login" type="submit">Login</button>
+        <div class="navLogin">
+            <a href="../../index.html">Home</a>
+            <a href="../pages/login.html">Login</a>
         </div>
     </header>
 
+    <main>
+        <img src="../assets/img/meeting.png" alt="Backgrous reunião">
+        <form>
+            <h2>Cadastre-se</h2>
+            <input type="text" name="name" id="nameRegister" placeholder="Seu nome">
+            <input type="email" name="email" id="emailRegister" placeholder="Seu e-mail">
+            <input type="password" name="password" id="passwordRegister" placeholder="Sua senha">
+            <select name="level" id="professional_level">
+                <option value="0" required hidden>Nível profissional</option>
+                <option  value="trainee">Estágio</option>
+                <option value="júnior">Júnior</option>
+                <option value="official">Pleno</option>
+                <option value="senior">Sênior</option>        
+                </select>    
+                <button class="register">Cadastre-se</button>
+                <a href="../../index.html" class="home" type="submit">Retornar</a>
+
+        </form>
+    </main>
+
+    <script type="module" src="../scripts/register.js"></script>
+    <script type="module" src="../scripts/login.js"></script>
 </body>
 </html>

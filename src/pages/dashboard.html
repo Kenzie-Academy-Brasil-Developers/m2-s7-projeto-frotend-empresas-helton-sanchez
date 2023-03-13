@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,17 +14,37 @@
 
     <title>User page</title>
 </head>
+
 <body>
     <header>
         <div>
-            <img src="./src/assets/img/ellipse.png" alt="Circulo roxo">
-            <img src="./src/assets/img/logo.png" alt="Logo Kenzie Empresas">
+            <img src="../assets/img/ellipse.png" alt="Circulo roxo">
+            <img src="../assets/img/logo.png" alt="Logo Kenzie Empresas">
         </div>
         <div>
             <button class="logout" type="submit">Logout</button>
         </div>
     </header>
-    
 
+    <main>
+
+        <section class="container__perfilUser">
+            <h2>User Name</h2>
+            <div>
+                <p class="email">Email: meuemail@mail.com</p>
+                <p class="cargo">Pleno</p>
+                <p class="typeJob">Home Office</p>
+                <img src="../assets/img/bluePen.png" class="pencil_edit">
+            </div>
+        </section>
+
+        <div class="container__work">
+            <h2>Você ainda não foi contratado</h2>
+        </div>
+    </main>
+
+
+    <script type="module" src="../scripts/dashboard.js"></script>
 </body>
+
 </html>

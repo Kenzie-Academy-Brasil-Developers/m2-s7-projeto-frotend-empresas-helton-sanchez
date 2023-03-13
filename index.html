@@ -19,14 +19,31 @@
             <img src="./src/assets/img/ellipse.png" alt="Circulo roxo">
             <img src="./src/assets/img/logo.png" alt="Logo Kenzie Empresas">
         </div>
-        <div>
-            <button class="login" type="submit">Login</button>
-            <button class="register" type="submit">Cadastrar</button>
+        <div class="navLogin">
+            <a href="./src/pages/login.html" >Login</a>
+            <a href="./src/pages/register.html" >Cadastrar</a>
         </div>
     </header>
     <main>
-        
+        <div>
+            <img src="./src/assets/img/meetingRectangle.png" alt="Reunião">
+        </div>
+        <div class="container__select">
+            <select class="selecionarSetor" name="selecionarSetor" id="select">
+                <option value="">Selecionar Setor</option>
+                <option class="option" value="Alimenticio">Alimenticio</option>
+                <option class="option" value="Varejo">Varejo</option>
+                <option class="option" value="Textil">Textil</option>
+                <option class="option" value="Manufatura">Manufatura</option>
+                <option class="option" value="Aeroespacial">Aeroespacial</option>
+                <option class="option" value="Automotiva">Automotiva</option>
+                <option class="option" value="TI">TI</option>
+                <option class="option" value="Atacado">Atacado</option>
+            </select>
+            <ul class="companyList"></ul>
+        </div>
     </main>
+
 
     <script type="module" src="./src/scripts/home.js"></script>
 </body>
