@@ -1,4 +1,4 @@
-import { onWorkerAtt, requestUsers, searchUserOn, token } from "./request.js"
+import { onWorkerAtt, searchUserOn, token } from "./request.js"
 
 export async function logout () {
     const logoutButton = document.querySelector('.logout')
@@ -13,7 +13,8 @@ logout()
 export async function renderPerfil () {
     const sectionPerfilUser = document.querySelector('.container__perfilUser')
     const renderPerfil = await searchUserOn(token)
-    console.log(renderPerfil)
+    const modalRender = document.querySelector('.modalPerfil')
+
         const userName = document.createElement('h2')
         const boxData = document.createElement('div')
         const email = document.createElement('p')
@@ -29,26 +30,22 @@ export async function renderPerfil () {
         imgBluePen.src = '../assets/img/bluePen.png'
         imgBluePen.classList.add('pencilEdit')
 
+        imgBluePen.addEventListener('click', (event) => {
+            event.preventDefault()
+    
+            modalRender.showModal()
+            editModal()
+        })
+
         sectionPerfilUser.append(userName, boxData)
         boxData.append(email, levelJob, typeJob, imgBluePen)
         
 }
 
-function editPerfil () {
-    const modalRender = document.querySelector('.modalPerfil')
-    const buttonEdit = document.querySelector('.pencilEdit')
-
-    buttonEdit.addEventListener('click', (event) => {
-        event.preventDefault()
-
-        modalRender.showModal()
-        editModal()
-    })
-}
-
 function editModal() {
+    const modalRender = document.querySelector('.modalPerfil')
     const input = document.querySelectorAll('input')
-    const btnEnviar = document.querySelector('button')
+    const btnEnviar = document.querySelector('.btnEnviar')
     
     btnEnviar.addEventListener('click', async(event) => {
         event.preventDefault()
@@ -60,8 +57,8 @@ function editModal() {
             inputPost[input.name] = input.value
         })
         
-     await onWorkerAtt(token, inputPost)
-  
+    const tatu = await onWorkerAtt(token, inputPost)
+        modalRender.close()
     })
     
 }
@@ -72,5 +69,3 @@ function editModal() {
 
 
 renderPerfil()
-// editPerfil()
-editModal()

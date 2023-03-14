@@ -121,13 +121,15 @@ export async function searchUserOn (token) {
 
 export async function onWorkerAtt(token, object) {
 
-    const infoApi = await fetch(`${url}/users`, {
+    const infoApi = await fetch(`${baseUrl}/users`, {
         method: 'PATCH',
-        headers: typeMedia,
-        
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        },
          body: JSON.stringify(object)
     })
-    const response =  infoApi
+    const response = await infoApi.json()
 
     return response
 }
