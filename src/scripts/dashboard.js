@@ -46,6 +46,7 @@ function editModal() {
     const modalRender = document.querySelector('.modalPerfil')
     const input = document.querySelectorAll('input')
     const btnEnviar = document.querySelector('.btnEnviar')
+    const btnClose = document.querySelector('span')
     
     btnEnviar.addEventListener('click', async(event) => {
         event.preventDefault()
@@ -58,6 +59,10 @@ function editModal() {
         })
         
     const tatu = await onWorkerAtt(token, inputPost)
+        modalRender.close()
+    })
+
+    btnClose.addEventListener('click', () => {
         modalRender.close()
     })
     

@@ -12,7 +12,7 @@ export async function logout () {
 
 logout()
 
-const renderDepartment = await requestCompany()
+const requestAllCompanies = await requestCompany()
 
 
 async function renderCompany(render) {
@@ -94,6 +94,7 @@ async function renderAllDepartment() {
 async function creatDepartment () {
     const buttonAddDepartment = document.querySelector('.criateDepartment')
     const modalAddDepartment = document.querySelector('.modalAddDepartment')
+    
 
     buttonAddDepartment.addEventListener('click', (event) => {
         event.preventDefault()
@@ -102,17 +103,17 @@ async function creatDepartment () {
 
         editModalDepartment()
     })
+
+
 }
+
 
 async function editModalDepartment () {
     const modalRender = document.querySelector('.modalAddDepartment')
     const input = document.querySelectorAll('input')
     const btnEnviar = document.querySelector('.btnEnviar')
-    
-    renderDepartment.forEach(element => {
-        const response =  element.sectors.uuid
-        return response
-    })
+    const btnClose = document.querySelector('span')
+
 
     btnEnviar.addEventListener('click', async(event) => {
         event.preventDefault()
@@ -124,7 +125,11 @@ async function editModalDepartment () {
             inputPost[input.name] = input.value
         })
         
-    await requestCreatDepartment(token, inputPost)
+        await requestCreatDepartment(token, inputPost)
+        modalRender.close()
+    })
+
+    btnClose.addEventListener('click', () => {
         modalRender.close()
     })
     
@@ -132,7 +137,7 @@ async function editModalDepartment () {
 
 
 
-renderCompany(renderDepartment)
+renderCompany(requestAllCompanies)
 renderSectors()
 renderUsers()
 renderNotDepartment()

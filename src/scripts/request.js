@@ -135,7 +135,7 @@ export async function onWorkerAtt(token, object) {
 }
 
 export async function requestCreatDepartment(token, object) {
-
+console.log(object)
     const infoApi = await fetch(`http://localhost:6278/departments`, {
         method: 'POST',
         headers: {
@@ -145,6 +145,5 @@ export async function requestCreatDepartment(token, object) {
         body: JSON.stringify(object)
     })
     const response = await infoApi.json()
-    console.log(response)
     return response
 }
