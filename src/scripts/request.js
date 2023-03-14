@@ -12,10 +12,10 @@ export async function registerUser(body) {
         headers: requestHeaders,
         body: JSON.stringify(body),
     })
-        const response = await addUser.json()
+    const response = await addUser.json()
     console.log(response)
-        return response
-    
+    return response
+
 
 }
 
@@ -101,7 +101,7 @@ export async function allDepartment() {
 }
 
 
-export async function searchUserOn (token) {
+export async function searchUserOn(token) {
 
     const responseAPI = await fetch(`${baseUrl}/users/profile`, {
         method: 'GET',
@@ -109,11 +109,11 @@ export async function searchUserOn (token) {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`
         }
-        
+
     })
 
     const response = await responseAPI.json()
-   
+
 
     return response
 
@@ -127,24 +127,24 @@ export async function onWorkerAtt(token, object) {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`
         },
-         body: JSON.stringify(object)
+        body: JSON.stringify(object)
     })
     const response = await infoApi.json()
 
     return response
 }
 
-export async function requestCreatDepartment (token, object) {
+export async function requestCreatDepartment(token, object) {
 
     const infoApi = await fetch(`http://localhost:6278/departments`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-            body: JSON.stringify(object)
-        }
+            Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify(object)
     })
     const response = await infoApi.json()
-
+    console.log(response)
     return response
 }

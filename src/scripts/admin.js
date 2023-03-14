@@ -14,6 +14,7 @@ logout()
 
 const renderDepartment = await requestCompany()
 
+
 async function renderCompany(render) {
     const ulAllCompany = document.querySelector('.allCompany')
     ulAllCompany.innerHTML = ""
@@ -103,11 +104,16 @@ async function creatDepartment () {
     })
 }
 
-function editModalDepartment () {
+async function editModalDepartment () {
     const modalRender = document.querySelector('.modalAddDepartment')
     const input = document.querySelectorAll('input')
     const btnEnviar = document.querySelector('.btnEnviar')
     
+    renderDepartment.forEach(element => {
+        const response =  element.sectors.uuid
+        return response
+    })
+
     btnEnviar.addEventListener('click', async(event) => {
         event.preventDefault()
         
