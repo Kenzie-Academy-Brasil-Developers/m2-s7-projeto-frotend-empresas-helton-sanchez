@@ -137,7 +137,6 @@ async function editModalDepartment () {
 
 async function nameCompanyBySelect(){
     const namesCompany = await requestCompany()
-    console.log(namesCompany)
     const selectCompanyAdmin = document.querySelector('.selectCriate')
     const selectCompanyCreate = document.querySelector('.selectCompany')
 

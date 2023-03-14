@@ -55,6 +55,8 @@
         </section>
     </main>
 
+    <!-- MODAIS -->
+
     <dialog class="modalAddDepartment modal">
 
         <div class="boxDialog">
@@ -65,6 +67,24 @@
             <input name="description"  type="text" placeholder="Descrição">
             <select class="selectCriate" name="company_uuid" id="">
                 <option value="">Selecionar Empresa</option>
+            </select>
+            <button class="btnEnviar">Criar o departamento</button>
+
+        </div>
+
+    </dialog>
+
+    <dialog class="modalEditUser modal">
+
+        <div class="boxDialog">
+
+            <h2>Editar Usuário</h2>
+            <span>x</span>
+            <select name="kind_of_work" id="">
+                <option value="">Selecionar modalidade de trabalho </option>
+            </select>
+            <select name="professional_level" id="">
+                <option value="">Selecionar nível profissional</option>
             </select>
             <button class="btnEnviar">Criar o departamento</button>
 

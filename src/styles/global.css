@@ -129,11 +129,10 @@ form>a {
 
 .boxDialog {
     position: relative;
-    position: absolute;
     width: 506px;
     height: 421px;
-    left: 467px;
     top: 302px;
+    margin: 0 auto;
     border: solid 2px;
     background: var(--grey1);
     display: flex;
