@@ -12,11 +12,10 @@ export async function registerUser(body) {
         headers: requestHeaders,
         body: JSON.stringify(body),
     })
-    if (addUser.ok) {
         const response = await addUser.json()
-
+    console.log(response)
         return response
-    }
+    
 
 }
 
@@ -45,7 +44,7 @@ export async function verifyTypeUser(token) {
         });
         const data = await request.json();
 
-        return data;
+        return data.is_admin
     } catch (err) {
         console.log(err);
     }
@@ -106,7 +105,10 @@ export async function searchUserOn (token) {
 
     const responseAPI = await fetch(`${baseUrl}/users/profile`, {
         method: 'GET',
-        headers: requestHeaders,
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        }
         
     })
 

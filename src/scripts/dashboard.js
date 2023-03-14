@@ -13,7 +13,7 @@ logout()
 export async function renderPerfil () {
     const sectionPerfilUser = document.querySelector('.container__perfilUser')
     const renderPerfil = await searchUserOn(token)
-
+    console.log(renderPerfil)
         const userName = document.createElement('h2')
         const boxData = document.createElement('div')
         const email = document.createElement('p')
@@ -39,7 +39,6 @@ function editPerfil () {
     const buttonEdit = document.querySelector('.pencilEdit')
 
     buttonEdit.addEventListener('click', (event) => {
-        console.log("oi")
         event.preventDefault()
 
         modalRender.showModal()
@@ -73,5 +72,5 @@ function editModal() {
 
 
 renderPerfil()
-editPerfil()
+// editPerfil()
 editModal()
