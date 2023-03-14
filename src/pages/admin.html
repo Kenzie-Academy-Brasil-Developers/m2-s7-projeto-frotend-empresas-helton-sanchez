@@ -16,13 +16,46 @@
 <body>
     <header>
         <div>
-            <img src="./src/assets/img/ellipse.png" alt="Circulo roxo">
-            <img src="./src/assets/img/logo.png" alt="Logo Kenzie Empresas">
+            <img src="../assets/img/ellipse.png" alt="Circulo roxo">
+            <img src="../assets/img/logo.png" alt="Logo Kenzie Empresas">
         </div>
         <div>
             <button class="logout" type="submit">Logout</button>
         </div>
     </header>
 
+    <main>
+        <section class="Container__department containerSection">
+            <div>
+                <h2>Departamentos</h2>
+                <select class="selectCompany" name="selectSector" id="select">
+                    <option value="">Selecionar Empresas</option>
+                    <option class="option" value="Alimenticio">Alimenticio</option>
+                    <option class="option" value="Varejo">Varejo</option>
+                    <option class="option" value="Textil">Textil</option>
+                    <option class="option" value="Manufatura">Manufatura</option>
+                    <option class="option" value="Aeroespacial">Aeroespacial</option>
+                    <option class="option" value="Automotiva">Automotiva</option>
+                    <option class="option" value="TI">TI</option>
+                    <option class="option" value="Atacado">Atacado</option>
+                </select>
+                <p>+ Criar</p>
+            </div>
+            <ul class="allCompany containerSection__ul">Listar empresas</ul>
+            <ul class="allDepartment"></ul>
+            <ul class="allDepartmentCompany"></ul>
+        </section>
+        <section class="container__user containerSection">
+            <div>
+                <h2>Usuários cadastrados</h2>
+            </div>
+            <ul class="allUsers containerSection__ul"></ul>
+            <ul class="userNotDepartment"></ul>
+
+        </section>
+    </main>
+
+
+    <script type="module" src="../scripts/admin.js"></script>
 </body>
 </html>

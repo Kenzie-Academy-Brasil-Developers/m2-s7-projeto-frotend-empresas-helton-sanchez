@@ -20,3 +20,32 @@ form>.ou {
 
 
 
+@media (max-width: 769px) {
+
+    body {
+        width: 100vw;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    main>img {
+        height: 500px;
+    }
+
+    form {
+
+        width: 100vw;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    form>p {
+        width: 70%;
+    }
+}

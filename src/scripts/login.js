@@ -1,6 +1,6 @@
 import { login, verifyTypeUser } from "./request.js"
 
-function toDashboard() {
+export function toDashboard() {
     const goToLogin = document.querySelector('.goLogin')
     const inputLogin = document.querySelectorAll('.inputLogin')
 
@@ -15,14 +15,19 @@ function toDashboard() {
 
         const loginUser = await login(loginBody)
 
+        userVerify()
     })
 }
 
 async function userVerify() {
     const token = localStorage.getItem('@loginEmpresa:token');
     const isAdmin = await verifyTypeUser(token);
-    return isAdmin;
+    // return isAdmin;
+    if(isAdmin){
+        window.location.replace('../pages/admin.html')
+    }else{
+        window.location.replace('../pages/dashboard.html')
+    }
 }
 
 toDashboard()
-userVerify()

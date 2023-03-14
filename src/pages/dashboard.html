@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/global.css">
-    <link rel="stylesheet" href="../styles/dashborad.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
 
 
     <title>User page</title>
@@ -29,13 +29,13 @@
     <main>
 
         <section class="container__perfilUser">
-            <h2>User Name</h2>
+            <!-- <h2>User Name</h2>
             <div>
                 <p class="email">Email: meuemail@mail.com</p>
                 <p class="cargo">Pleno</p>
                 <p class="typeJob">Home Office</p>
                 <img src="../assets/img/bluePen.png" class="pencil_edit">
-            </div>
+            </div> -->
         </section>
 
         <div class="container__work">
@@ -43,8 +43,22 @@
         </div>
     </main>
 
+    <dialog class="modalPerfil modal">
+
+        <div class="boxDialog">
+
+            <h2>Editar Perfil</h2>
+            <input name="username" type="text" placeholder="Seu nome">
+            <input name="email"  type="text" placeholder="Seu email">
+            <input name="password" type="text" placeholder="Sua senha">
+            <button>Editar Perfil</button>
+
+        </div>
+
+    </dialog>
 
     <script type="module" src="../scripts/dashboard.js"></script>
+
 </body>
 
 </html>
