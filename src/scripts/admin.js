@@ -1,4 +1,4 @@
-import { requestCompany, requestSectors, requestUsers, userNotDepartment, allDepartment, token } from "./request.js";
+import { requestCompany, requestSectors, requestUsers, userNotDepartment, allDepartment, token, requestCreatDepartment } from "./request.js";
 
 
 export async function logout () {
@@ -90,10 +90,39 @@ async function renderAllDepartment() {
 }
 
 
+async function creatDepartment () {
+    const buttonAddDepartment = document.querySelector('.criateDepartment')
+    const modalAddDepartment = document.querySelector('.modalAddDepartment')
 
+    buttonAddDepartment.addEventListener('click', (event) => {
+        event.preventDefault()
 
+        modalAddDepartment.showModal()
 
+        editModalDepartment()
+    })
+}
 
+function editModalDepartment () {
+    const modalRender = document.querySelector('.modalAddDepartment')
+    const input = document.querySelectorAll('input')
+    const btnEnviar = document.querySelector('.btnEnviar')
+    
+    btnEnviar.addEventListener('click', async(event) => {
+        event.preventDefault()
+        
+        const inputPost = {}
+        
+        input.forEach((input) => {
+            
+            inputPost[input.name] = input.value
+        })
+        
+    await requestCreatDepartment(token, inputPost)
+        modalRender.close()
+    })
+    
+}
 
 
 
@@ -102,3 +131,4 @@ renderSectors()
 renderUsers()
 renderNotDepartment()
 renderAllDepartment()
+creatDepartment()

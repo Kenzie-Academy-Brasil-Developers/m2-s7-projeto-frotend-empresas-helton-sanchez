@@ -39,7 +39,7 @@
                     <option class="option" value="TI">TI</option>
                     <option class="option" value="Atacado">Atacado</option>
                 </select>
-                <p>+ Criar</p>
+                <p class="criateDepartment">+ Criar</p>
             </div>
             <ul class="allCompany containerSection__ul">Listar empresas</ul>
             <ul class="allDepartment"></ul>
@@ -55,6 +55,19 @@
         </section>
     </main>
 
+    <dialog class="modalAddDepartment modal">
+
+        <div class="boxDialog">
+
+            <h2>Criar Departamento</h2>
+            <input name="name" type="text" placeholder="Nome do departamento">
+            <input name="description"  type="text" placeholder="Descrição">
+            <input name="company_uuid" type="text" placeholder="Selecionar empresa">
+            <button class="btnEnviar">Criar o departamento</button>
+
+        </div>
+
+    </dialog>
 
     <script type="module" src="../scripts/admin.js"></script>
 </body>
