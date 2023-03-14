@@ -135,7 +135,34 @@ async function editModalDepartment () {
     
 }
 
+async function nameCompanyBySelect(){
+    const namesCompany = await requestCompany()
+    console.log(namesCompany)
+    const selectCompanyAdmin = document.querySelector('.selectCriate')
+    const selectCompanyCreate = document.querySelector('.selectCompany')
 
+
+    namesCompany.forEach(element => {
+        
+        const options = document.createElement('option')
+
+        options.innerText = element.name
+        options.value = element.name
+
+        selectCompanyCreate.append(options)
+    })
+    namesCompany.forEach(element => {
+        
+        const options = document.createElement('option')
+
+        options.innerText = element.name
+        options.value = element.name
+
+        selectCompanyAdmin.append(options)
+    })
+}
+
+nameCompanyBySelect()
 
 renderCompany(requestAllCompanies)
 renderSectors()

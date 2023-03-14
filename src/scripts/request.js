@@ -57,6 +57,8 @@ export async function requestCompany() {
     return responseAPI
 }
 
+
+
 export async function requestSectors(showSector) {
     const sectors = await fetch(`${baseUrl}/companies/${showSector}`)
     const responseAPI = await sectors.json()
