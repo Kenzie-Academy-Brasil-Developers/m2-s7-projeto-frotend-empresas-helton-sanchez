@@ -1,4 +1,4 @@
-import { onWorkerAtt, searchUserOn, token } from "./request.js"
+import { onWorkerAtt, requestCoWorkers, searchUserOn, token } from "./request.js"
 
 export async function logout () {
     const logoutButton = document.querySelector('.logout')
@@ -58,7 +58,8 @@ function editModal() {
             inputPost[input.name] = input.value
         })
         
-    const tatu = await onWorkerAtt(token, inputPost)
+        const tatu = await onWorkerAtt(token, inputPost)
+        console.log(tatu)
         modalRender.close()
     })
 
@@ -68,9 +69,38 @@ function editModal() {
     
 }
 
+async function renderCoWorker() {
+    const section = document.querySelector('.sectionCoWorker')
+    const div = document.querySelector('.divCoWorker')
+    const ulAllUsers = document.querySelector('.coWorker')
+    const renderUsers = await requestCoWorkers()
+
+    
+    renderUsers.forEach(element => {
+
+        const titleh2 = document.querySelector('h2')
+
+        const liAllUsers = document.createElement('li')
+        const h3AllUsers = document.createElement('h3')
+        const levelJob = document.createElement('p')
+
+
+        h3AllUsers.innerText = element.username
+        levelJob.innerText = element.professional_level
+
+        titleh2.innerHTML = `${element.name} - ${element.description}`
+
+        section.append(div)
+        div.append(titleh2)
+        
+        ulAllUsers.appendChild(liAllUsers)
+        liAllUsers.append(h3AllUsers, levelJob)
+
+        
+    });
+}
 
 
 
-
-
+renderCoWorker()
 renderPerfil()

@@ -42,17 +42,29 @@
                 <p class="criateDepartment">+ Criar</p>
             </div>
             <ul class="allCompany containerSection__ul">Listar empresas</ul>
-            <ul class="allDepartment"></ul>
-            <ul class="allDepartmentCompany"></ul>
         </section>
+
+        <section class="Container__allDepartment containerSection">
+            <div>
+                <h2>Todos Departamentos</h2>
+            </div>
+            <ul class="allDepartment containerSection__ul"></ul>
+        </section>
+
         <section class="container__user containerSection">
             <div>
                 <h2>Usuários cadastrados</h2>
             </div>
             <ul class="allUsers containerSection__ul"></ul>
-            <ul class="userNotDepartment"></ul>
-
         </section>
+
+        <section class="Container__userNotDepartment containerSection">
+            <div>
+                <h2>Funcionário sem Departamento</h2>
+            </div>
+            <ul class="userNotDepartment containerSection__ul"></ul>
+        </section>
+
     </main>
 
     <!-- MODAIS -->
@@ -79,11 +91,11 @@
         <div class="boxDialog">
 
             <h2>Editar Usuário</h2>
-            <span>x</span>
-            <select name="kind_of_work" id="">
+            <span class="closeEditUser">x</span>
+            <select name="kind_of_work" id="changeKindWorkUser">
                 <option value="">Selecionar modalidade de trabalho </option>
             </select>
-            <select name="professional_level" id="">
+            <select name="professional_level" id="changeProfessionalLevelUser">
                 <option value="">Selecionar nível profissional</option>
             </select>
             <button class="btnEnviar">Criar o departamento</button>

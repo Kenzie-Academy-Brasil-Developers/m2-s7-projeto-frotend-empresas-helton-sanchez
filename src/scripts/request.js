@@ -50,6 +50,20 @@ export async function verifyTypeUser(token) {
     }
 }
 
+export async function requestCoWorkers() {
+    const coWorkerApi = await fetch(`${baseUrl}/users/departments/coworkers`, {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        }
+    })
+    const responseApi = await coWorkerApi.json()
+
+    return responseApi
+
+}
+
 export async function requestCompany() {
     const renderCompany = await fetch(`${baseUrl}/companies`)
     const responseAPI = await renderCompany.json()
@@ -67,7 +81,7 @@ export async function requestSectors(showSector) {
 }
 
 
-export async function requestUsers(token) {
+export async function requestUsers() {
     const allUsers = await fetch(`${baseUrl}/users`, {
         method: 'GET',
         headers: {
@@ -79,7 +93,9 @@ export async function requestUsers(token) {
     return responseAPI
 }
 
-export async function userNotDepartment() {
+
+
+export async function userNotDepartment(token) {
     const userNotDepartment = await fetch(`${baseUrl}/admin/out_of_work`, {
         method: 'GET',
         headers: {
@@ -90,6 +106,7 @@ export async function userNotDepartment() {
     const responseAPI = await userNotDepartment.json()
     return responseAPI
 }
+
 export async function allDepartment() {
     const allDepartment = await fetch(`${baseUrl}/departments`, {
         method: 'GET',
@@ -136,8 +153,26 @@ export async function onWorkerAtt(token, object) {
     return response
 }
 
+export async function changeWorkUser(id, token, object) {
+
+    const requestApi = await fetch(`${url}/admin/update_user/${id}`, {
+        method: 'PATCH',
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify(object)
+    })
+
+    const response = await requestApi.json()
+    console.log(response);
+
+    return response
+
+}
+
+
 export async function requestCreatDepartment(token, object) {
-console.log(object)
     const infoApi = await fetch(`http://localhost:6278/departments`, {
         method: 'POST',
         headers: {
